@@ -1,7 +1,15 @@
 let edad = Number(prompt('Para navegar este sitio usted debe ser mayor de 18. Ingrese su edad:'))
 console.log(18)
 
-if(edad >= 18) {
+function validarEdad(edad) {
+  if (edad >= 16) {
+    return true;
+  } else{
+    return false;
+  }
+}
+
+if(validarEdad(edad)) {
   alert("Sos mayor de edad. Bienvenido!!")
 
 
@@ -28,7 +36,7 @@ if(edad >= 18) {
   }
   
   
-  
+   
   
   
 } else {
