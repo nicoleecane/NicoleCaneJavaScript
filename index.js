@@ -4,15 +4,15 @@ console.log(18)
 if(edad >= 18) {
   alert("Sos mayor de edad. Bienvenido!!")
 
-  
+
   let intentosMaximos = 3;
   let intentos = 0;
   let usuarioValido = "nicoleec";
   let contraseñaValida = "123456";
   
   while (intentos < intentosMaximos) {
-    var usuario = prompt("Ingrese su usuario:");
-    var contraseña = prompt("Ingrese su contraseña:");
+    let usuario = prompt("Ingrese su usuario:");
+    let contraseña = prompt("Ingrese su contraseña:");
   
     if (usuario === usuarioValido && contraseña === contraseñaValida) {
       alert("Inicio de sesión exitoso. ¡Bienvenido!");
