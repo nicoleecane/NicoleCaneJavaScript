@@ -79,7 +79,10 @@ const cervezas = [cerveza1, cerveza2, cerveza3,cerveza4, cerveza5];
  console.log( cervezas[3].porcentajeAlcohol);
  console.log( cervezas[4].precio);*/
 
+ const busqueda = prompt("Ingrese el nombre de la cerveza que desea buscar:");
+
  for (let i =0; i < cervezas.length; i++) {
+  if (cervezas[i].nombre.toLowerCase().includes(busqueda.toLowerCase)) {
   console.log("===========================");
   console.log("Nombre: " + cervezas [i].nombre);
   console.log("Tipo: " + cervezas [i].tipo);
@@ -87,7 +90,9 @@ const cervezas = [cerveza1, cerveza2, cerveza3,cerveza4, cerveza5];
   console.log("ABV: " + cervezas [i].porcentajeAlcohol);
   //console.log("Precio: " + cervezas[i].precio)
   console.log("Precio mas Iva: " + cervezas [i].masIva());
-  
+  }  //else {
+    //alert("Disculpas! No tenemos esa Cerveza en stock.");
+  //}
   
   
  }
