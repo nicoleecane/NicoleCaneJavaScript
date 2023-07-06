@@ -78,15 +78,13 @@ for (const cerveza of cervezas) {
   cerveza.masIva();
 }
 
-//console.log(cervezas)
+console.log( " Array completo de cervezas", cervezas)
 
 const busqueda = prompt("Ingrese el tipo de la cerveza que desea buscar:");
 
-let resultado = cervezas.find(
-  (cerveza) => cerveza.tipo.toLowerCase() === busqueda.toLowerCase()
-);
+let resultado = cervezas.find( cerveza => cerveza.tipo.toLowerCase() === busqueda.toLowerCase());
 
-if (resultado === "sour") {
+if (resultado) {
   console.log(resultado);
 } else {
   console.log("No se encontró ninguna cerveza con el tipo especificado.");
