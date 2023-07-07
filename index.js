@@ -63,14 +63,10 @@ class Cerveza {
 const cervezas = [];
 
 cervezas.push(new Cerveza("ChachaCherry", "Sour", "frutal", 8.5, 18));
-cervezas.push(
-  new Cerveza("Hazy Jungle", "IPA", "Indian Pale Ale", 7.2, 19.5, 8.5, 18)
-);
+cervezas.push(new Cerveza("Hazy Jungle", "IPA", "Indian Pale Ale", 7.2, 19.5, 8.5, 18));
 cervezas.push(new Cerveza("The Read Head", "Red Ale", "Irish Red", 6.5, 17.95));
 cervezas.push(new Cerveza("blacky", "Stout", "Strong", 9.2, 22.5));
-cervezas.push(
-  new Cerveza("Big Dank Resin", "IPA", "Bitter Indian Pale Ale", 5.8, 20)
-);
+cervezas.push(new Cerveza("Big Dank Resin", "IPA", "Bitter Indian Pale Ale", 5.8, 20) );
 
 //console.log(cervezas)
 
@@ -89,6 +85,16 @@ if (resultado) {
 } else {
   console.log("No se encontró ninguna cerveza con el tipo especificado.");
 }
+
+
+
+
+
+
+
+
+
+//Pruebas
 
 
 /*let resultado1 = cervezas.find((cerveza) => cerveza.tipo.toLowerCase() === "sour")
