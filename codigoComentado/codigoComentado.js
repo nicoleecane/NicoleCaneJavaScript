@@ -236,3 +236,31 @@ export const cervezas = [
       "https://www.rockyridgebrewing.com.au/wp-content/uploads/2023/03/500mL-Can-Label-Mockup-Big-Dank-Resin.png",
   },
 ];*/
+
+
+//storage-json error
+
+
+/*const guardarLocal =(clave, valor) => {localStorage.setItem(clave, valor)}
+
+for(const cerveza of cervezas){
+  guardarLocal(cerveza.nombre, JSON.stringify(cerveza))
+}
+
+
+
+const obtenerLocal = (clave) => {
+  const valorJSON = localStorage.getItem(clave);
+  return JSON.parse(valorJSON);
+};
+
+
+const cervezasGuardadas = [];
+for (const cerveza of cervezas) {
+  const cervezaGuardada = obtenerLocal(cerveza.nombre);
+  cervezasGuardadas.push(cervezaGuardada);
+}
+
+
+console.log(cervezasGuardadas);
+*/
