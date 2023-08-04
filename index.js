@@ -1,8 +1,10 @@
 import { cervezas } from "./productos.js";
 
 const listadoCervezas = document.getElementById("listadoCervezas");
+const verCarrito = document.getElementById("verCarrito")
+const modalContainer = document.getElementById("modalContainer")
 
-const cervezasGuardadas = [];
+const carrito = [];
 
 const divRow = document.createElement("div");
 divRow.classList.add("row", "w-100");
@@ -31,12 +33,79 @@ for (const cerveza of cervezas) {
   const boton = document.getElementById(`addToCart-${cerveza.id}`);
 
   boton.addEventListener("click", () => {
-    console.log(boton);
+    carrito.push({
+      id:cerveza.id,
+      img:cerveza.imgUrl,
+      nombre:cerveza.nombre,
+      precio:cerveza.precio,
+    })
+
+    console.log(carrito);
   });
 }
 
-const agregarAlCarrito = (id) => {
-  const producto = cervezas.find((producto) => producto.id === id);
+verCarrito.addEventListener("click", ()=>{
+  modalContainer.innerHTML = "";
+ 
+  modalContainer.style.display="block";
+  const modalHeader = document.createElement("div")
+  modalHeader.className = "modal-header"
+  modalHeader.innerHTML = `
+  <h1 class="modal-header-title"> Carrito </h1>
+  `;
+  modalContainer.appendChild(modalHeader);
+
+  const modalButton = document.createElement("h1");
+  modalButton.innerText = "X";
+  modalButton.className = "modal-header-button"
+
+  modalButton.addEventListener("click", () => {
+    modalContainer.style.display="none";
+  });
+
+  modalHeader.appendChild(modalButton);
+
+
+
+  
+   carrito.forEach((cerveza) => {
+
+    let carritoContent = document.createElement("div")
+   carritoContent.className="modal-content"
+   carritoContent.innerHTML = `
+    <img src="${cerveza.img}">
+    <h3>${cerveza.nombre}</h3>
+    <p>${cerveza.precio} $ </p>
+      `;
+
+      modalContainer.appendChild(carritoContent)
+   });
+ 
+
+  const total = carrito.reduce((acc,el) => acc + el.precio, 0);
+
+  const totalBuying =document.createElement("div")
+  totalBuying.className= "total-content"
+  totalBuying.innerHTML = `total a pagar: ${total} $`;
+  modalContainer.appendChild(totalBuying);
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const agregarAlCarrito = (id) => {
+  const producto = cervezas.find((producto) => producto.id == id);
   cervezasGuardadas.push(producto);
   console.log(cervezasGuardadas);
   guardarLocal("carrito", cervezasGuardadas);
@@ -45,3 +114,4 @@ const agregarAlCarrito = (id) => {
 const guardarLocal = (clave, valor) => {
   localStorage.setItem(clave, JSON.stringify(valor));
 };
+*/
