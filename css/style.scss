@@ -1,16 +1,17 @@
-* {
+*{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.logo {
-  padding: 12px;
-  display: flex;
-  justify-content: center;
+.logo{
+padding: 12px;
+display: flex;
+justify-content: center;
 }
 
-.maincontent {
+
+.maincontent{
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -19,45 +20,57 @@
   padding-bottom: 50px;
 }
 
-h1 {
+h1{
   padding: 80px;
   font-size: 150px;
 }
 
-p {
+
+p{
   font-size: 25px;
 }
 
-.mb {
+
+.mb{
   flex-basis: 50%;
   min-width: 300px;
   padding-left: 50px;
-}
-.mb .img {
-  max-width: 100%;
-}
+  .img{
+    max-width: 100%;
+  }
 
-.bttn {
+}
+.bttn{
   background-color: greenyellow;
-  padding: 10px;
+  padding:10px;
   font-weight: bold;
-  border-radius: 6px;
-  border: 2px solid black;
-  transition: all 0.2s ease;
+ border-radius: 6px;
+ border: 2px solid black;
+ transition: all 0.2s ease;
+ 
+ 
 }
 
-footer {
+
+
+footer{
   background-color: rgb(8, 8, 8);
-}
-footer .copy {
-  color: rgb(241, 241, 88);
+  .copy{
+    color: rgb(241, 241, 88);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  }
 }
 
-.modalContainer {
+.ver-carrito{
+  cursor: pointer;
+}
+
+
+
+.modalContainer{
   width: 80%;
   margin: 0 10%;
   max-height: 88vh;
@@ -73,11 +86,12 @@ footer .copy {
   scrollbar-color: none;
 }
 
-.modalContainer::-webkit-scrollbar {
+.modalContainer::-webkit-scrollbar{
   display: none;
+
 }
 
-.modal-header {
+.modal-header{
   display: flex;
   justify-content: space-around;
   background-color: black;
@@ -85,31 +99,50 @@ footer .copy {
   width: 100%;
 }
 
-.modal-header-title {
+.modal-header-title{
   justify-self: start;
+
 }
 
-.modal-header-button {
-  cursor: pointer;
+.modal-header-button{
+cursor: pointer;
 }
 
-.modal-content {
+ .modal-content{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   width: 70%;
   margin: 10px;
+  color:black;
+
 }
 
-.modalContainer > div > img {
+.modalContainer > div > img{
   height: 120px;
   width: 120px;
 }
 
-.total-content {
+.total-content{
   font-size: 25px;
   padding: 20px;
   text-align: center;
   padding-top: 20px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.delete-cerveza{
+  cursor: pointer;
+}
+
+.cantidad-carrito{
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 4px;
+  top: 37px;
+  right: 14px;
+  position: absolute;
+  display: none;
+}
