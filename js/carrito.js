@@ -37,15 +37,27 @@ const pintarCarrito = () =>{
        `;
 
 
-       modalContainer.appendChild(carritoContent)
+       
       
 
       let eliminar = document.createElement("span");
       eliminar.innerText = "❌";
       eliminar.className = "delete-cerveza";
+      eliminar.id = `eliminar-${cerveza.id}`;
       carritoContent.append(eliminar);
 
-     
+      modalContainer.appendChild(carritoContent)
+
+      const botonEliminar = document.getElementById(`eliminar-${cerveza.id}`);
+
+
+      botonEliminar.addEventListener("click", () => {
+  
+        eliminarProducto(cerveza.id);
+     });
+
+
+      
     });
 
     
@@ -63,13 +75,15 @@ const pintarCarrito = () =>{
 };
 
   verCarrito.addEventListener("click", pintarCarrito);
-  
-  const eliminarProducto= (id) =>{
-    const foundId = cervezas.find((cerveza) => cerveza.id) ;
 
-    cervezas = cervezas.filter((cervezaId) => {
-       return cervezaId !== foundId;
-    })
+
+
+
+  const eliminarProducto = (id) => {
+
+    const cervezaEncontrada = carrito.find((cerveza) => cerveza.id === id);
+    carrito.splice(carrito.indexOf(cervezaEncontrada), 1);
+    
     
     carritoCounter();
     pintarCarrito();

@@ -3,7 +3,7 @@ const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modalContainer");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
 
-const carrito = [];
+let carrito = [];
 
 const divRow = document.createElement("div");
 divRow.classList.add("row", "w-100");
