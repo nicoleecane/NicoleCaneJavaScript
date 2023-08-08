@@ -33,12 +33,33 @@ const pintarCarrito = () =>{
        <img src="${cerveza.img}">
        <h3>${cerveza.nombre}</h3>
        <p>${cerveza.precio} $ </p>
+       <span class="restar"> - </span>
        <p>Cantidad: ${cerveza.cantidad}</p>
+       <span class="sumar"> + </span>
+       <p>total: ${cerveza.cantidad * cerveza.precio} $</p>
        `;
 
 
-       
+       let restar = carritoContent.querySelector(".restar")
+
+       restar.addEventListener("click", () => {
+        if(cerveza.cantidad !== 1)
+        cerveza.cantidad--;
+        saveLocal();
+        pintarCarrito();
+       })
       
+       let sumar = carritoContent.querySelector(".sumar")
+       sumar.addEventListener("click", () =>{
+        cerveza.cantidad++;
+        saveLocal();
+        pintarCarrito();
+       })
+
+
+
+
+
 
       let eliminar = document.createElement("span");
       eliminar.innerText = "❌";
@@ -86,10 +107,19 @@ const pintarCarrito = () =>{
     
     
     carritoCounter();
+    saveLocal();
     pintarCarrito();
   };
 
   const carritoCounter = () => {
     cantidadCarrito.style.display = "block";
-    cantidadCarrito.innerText = carrito.length;
-  }
+
+    const carritoLength= carrito.length;
+
+    localStorage.setItem("carritoLength", JSON.stringify(carritoLength))
+
+
+    cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
+  };
+
+  carritoCounter();

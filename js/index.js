@@ -3,7 +3,7 @@ const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modalContainer");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const divRow = document.createElement("div");
 divRow.classList.add("row", "w-100");
@@ -53,6 +53,7 @@ function createBeerCards() {
     }
     
      carritoCounter();
+     saveLocal();
     });
   
   
@@ -61,6 +62,9 @@ function createBeerCards() {
 }
 createBeerCards();
 
+const saveLocal = () => {
+  localStorage.setItem("carrito", JSON.stringify(carrito ));
+}
 
 
 
