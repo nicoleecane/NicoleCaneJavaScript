@@ -5,11 +5,25 @@ const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+
+
+const getCervezas = async () => {
+  const response = await fetch("./js/data.json");
+  const data = await response.json();
+  console.log(data);
+  createBeerCards(data);
+}
+
+getCervezas();
+
+
+
+
 const divRow = document.createElement("div");
 divRow.classList.add("row", "w-100");
 
-function createBeerCards() {
-  for (const cerveza of cervezas) {
+function createBeerCards(data) {
+  for (const cerveza of data) {
     const divCard = document.createElement("div");
     divCard.classList.add("card", "col-4");
     divCard.innerHTML = `
@@ -74,14 +88,4 @@ const saveLocal = () => {
 
 
 
-/*const agregarAlCarrito = (id) => {
-  const producto = cervezas.find((producto) => producto.id == id);
-  cervezasGuardadas.push(producto);
-  console.log(cervezasGuardadas);
-  guardarLocal("carrito", cervezasGuardadas);
-};
 
-const guardarLocal = (clave, valor) => {
-  localStorage.setItem(clave, JSON.stringify(valor));
-};
-*/

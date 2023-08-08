@@ -264,3 +264,16 @@ for (const cerveza of cervezas) {
 
 console.log(cervezasGuardadas);
 */
+
+
+/*const agregarAlCarrito = (id) => {
+  const producto = cervezas.find((producto) => producto.id == id);
+  cervezasGuardadas.push(producto);
+  console.log(cervezasGuardadas);
+  guardarLocal("carrito", cervezasGuardadas);
+};
+
+const guardarLocal = (clave, valor) => {
+  localStorage.setItem(clave, JSON.stringify(valor));
+};
+*/
